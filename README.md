@@ -5,22 +5,22 @@
 
 Perbedaan:
 1.Perubahan Data: 
--Stateless widget tidak dapat berubah setelah aplikasi berjalan. Ini berarti data atau tampilan yang dihasilkan oleh stateless widget bersifat tetap dan tidak akan berubah kecuali widget dibangun ulang dari awal. 
--Stateful widget memungkinkan data atau tampilan berubah selama aplikasi berjalan, misalnya sebagai respons terhadap tindakan pengguna atau perubahan data internal.
+- Stateless widget tidak dapat berubah setelah aplikasi berjalan. Ini berarti data atau tampilan yang dihasilkan oleh stateless widget bersifat tetap dan tidak akan berubah kecuali widget dibangun ulang dari awal. 
+- Stateful widget memungkinkan data atau tampilan berubah selama aplikasi berjalan, misalnya sebagai respons terhadap tindakan pengguna atau perubahan data internal.
 2.State: 
--Stateless widget tidak memiliki state, karena sifatnya yang tetap dan tidak berubah. 
--Stateful widget memiliki state yang bisa diperbarui, memungkinkan widget untuk beradaptasi dengan perubahan data secara dinamis.
+- Stateless widget tidak memiliki state, karena sifatnya yang tetap dan tidak berubah. 
+- Stateful widget memiliki state yang bisa diperbarui, memungkinkan widget untuk beradaptasi dengan perubahan data secara dinamis.
 3.Kapan Dibangun: 
--Stateless widget hanya akan dibangun ulang jika objeknya berubah. Jadi, ketika ada perubahan yang memengaruhi stateless widget, seluruh widget harus direkonstruksi. 
--Stateful widget dibangun ulang ketika state di dalamnya mengalami perubahan, yang dilakukan dengan memanggil fungsi setState.
+- Stateless widget hanya akan dibangun ulang jika objeknya berubah. Jadi, ketika ada perubahan yang memengaruhi stateless widget, seluruh widget harus direkonstruksi. 
+- Stateful widget dibangun ulang ketika state di dalamnya mengalami perubahan, yang dilakukan dengan memanggil fungsi setState.
 4.Kinerja: 
--Karena stateless widget tidak perlu melacak perubahan, ia biasanya lebih ringan dan lebih efisien dalam penggunaan sumber daya. -Stateful widget memerlukan lebih banyak sumber daya karena harus melacak perubahan state dan merender ulang tampilan sesuai kebutuhan.
+- Karena stateless widget tidak perlu melacak perubahan, ia biasanya lebih ringan dan lebih efisien dalam penggunaan sumber daya. - Stateful widget memerlukan lebih banyak sumber daya karena harus melacak perubahan state dan merender ulang tampilan sesuai kebutuhan.
 
 2.Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
-Text: Digunakan untuk menampilkan teks pada layar. Widget Text digunakan di banyak bagian proyek, misalnya untuk menampilkan teks "ZERONE" pada AppBar, serta judul dan konten di InfoCard.
-Icon: Menampilkan ikon di layar. Pada ItemCard, ikon ditampilkan di atas nama tombol untuk membuat tampilan lebih visual.
-Card: Widget ini digunakan untuk menampilkan elemen dalam bentuk kartu yang memiliki bayangan, membuatnya tampak seperti elemen yang terangkat. Dalam proyek ini, Card digunakan dalam InfoCard untuk menampilkan informasi dan di ItemCard untuk menampilkan tombol navigasi.
-SnackBar: Menampilkan pesan singkat di bagian bawah layar. Di proyek ini, SnackBar digunakan untuk memberikan notifikasi ketika pengguna menekan salah satu ItemCard.
+- Text: Digunakan untuk menampilkan teks pada layar. Widget Text digunakan di banyak bagian proyek, misalnya untuk menampilkan teks "ZERONE" pada AppBar, serta judul dan konten di InfoCard.
+- Icon: Menampilkan ikon di layar. Pada ItemCard, ikon ditampilkan di atas nama tombol untuk membuat tampilan lebih visual.
+- Card: Widget ini digunakan untuk menampilkan elemen dalam bentuk kartu yang memiliki bayangan, membuatnya tampak seperti elemen yang terangkat. Dalam proyek ini, Card digunakan dalam InfoCard untuk menampilkan informasi dan di ItemCard untuk menampilkan tombol navigasi.
+- SnackBar: Menampilkan pesan singkat di bagian bawah layar. Di proyek ini, SnackBar digunakan untuk memberikan notifikasi ketika pengguna menekan salah satu ItemCard.
 
 
 3.Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
@@ -37,11 +37,11 @@ final bisa digunakan ketika nilai diketahui saat runtime.
 
 5.Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
 
--Membuat Proyek Flutter Baru:  dengan menjalankan perintah di terminal untuk membuat proyek baru: flutter create ecommerce_app
+- Membuat Proyek Flutter Baru:  dengan menjalankan perintah di terminal untuk membuat proyek baru: flutter create ecommerce_app
 
--Setiap tombol dibuat menggunakan widget ElevatedButton.icon, yang memungkinkan ikon dan teks berada dalam satu tombol.
+- Setiap tombol dibuat menggunakan widget ElevatedButton.icon, yang memungkinkan ikon dan teks berada dalam satu tombol.
 Ikon yang digunakan adalah Icons.store untuk "Lihat Produk", Icons.add untuk "Tambah Produk", dan Icons.logout untuk "Logout".
 
--Mengatur warna backgrounf untuk setiap button dengan case switch pada Widget build di class ItemCard.
+- Mengatur warna backgrounf untuk setiap button dengan case switch pada Widget build di class ItemCard.
 
--Menampilkan pesan dengan ScaffoldMessenger pada saat card di tap pada Widget build di class ItemCard.
+- Menampilkan pesan dengan ScaffoldMessenger pada saat card di tap pada Widget build di class ItemCard.
