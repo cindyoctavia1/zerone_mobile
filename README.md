@@ -17,6 +17,10 @@ Perbedaan:
 -Karena stateless widget tidak perlu melacak perubahan, ia biasanya lebih ringan dan lebih efisien dalam penggunaan sumber daya. -Stateful widget memerlukan lebih banyak sumber daya karena harus melacak perubahan state dan merender ulang tampilan sesuai kebutuhan.
 
 2.Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
+Text: Digunakan untuk menampilkan teks pada layar. Widget Text digunakan di banyak bagian proyek, misalnya untuk menampilkan teks "ZERONE" pada AppBar, serta judul dan konten di InfoCard.
+Icon: Menampilkan ikon di layar. Pada ItemCard, ikon ditampilkan di atas nama tombol untuk membuat tampilan lebih visual.
+Card: Widget ini digunakan untuk menampilkan elemen dalam bentuk kartu yang memiliki bayangan, membuatnya tampak seperti elemen yang terangkat. Dalam proyek ini, Card digunakan dalam InfoCard untuk menampilkan informasi dan di ItemCard untuk menampilkan tombol navigasi.
+SnackBar: Menampilkan pesan singkat di bagian bawah layar. Di proyek ini, SnackBar digunakan untuk memberikan notifikasi ketika pengguna menekan salah satu ItemCard.
 
 
 3.Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
