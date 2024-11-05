@@ -6,8 +6,8 @@ class MyHomePage extends StatelessWidget {
   final String className = 'PBP B'; // Kelas
 
   final List<ItemHomepage> items = [
-    ItemHomepage("Lihat Mood", Icons.mood),
-    ItemHomepage("Tambah Mood", Icons.add),
+    ItemHomepage("Lihat Produk", Icons.store),
+    ItemHomepage("Tambah Produk", Icons.add),
     ItemHomepage("Logout", Icons.logout),
   ];
 
@@ -38,6 +38,7 @@ class MyHomePage extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
+                fontFamily: 'Verdana',
               ),
             ),
             backgroundColor: Colors.transparent, // Mengatur latar belakang menjadi transparan
@@ -153,22 +154,33 @@ class ItemHomepage {
 
 class ItemCard extends StatelessWidget {
   // Menampilkan kartu dengan ikon dan nama.
-
   final ItemHomepage item;
 
   const ItemCard(this.item, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      // Menentukan warna latar belakang dari tema aplikasi.
-      color: Colors.white,
-      // Membuat sudut kartu melengkung.
+    // Menentukan warna berdasarkan nama tombol.
+    Color backgroundColor;
+    switch (item.name) {
+      case "Lihat Produk":
+        backgroundColor = Colors.lightBlue;
+        break;
+      case "Tambah Produk":
+        backgroundColor = Colors.green;
+        break;
+      case "Logout":
+        backgroundColor = Colors.red;
+        break;
+      default:
+        backgroundColor = Colors.grey; // Warna default jika tidak ada yang sesuai
+    }
+
+    return Card(
       elevation: 4.0, // Menambahkan elevasi untuk efek bayangan
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12), // Membuat sudut kartu melengkung
       ),
-
       child: InkWell(
         // Aksi ketika kartu ditekan.
         onTap: () {
@@ -179,8 +191,9 @@ class ItemCard extends StatelessWidget {
               SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!")),
             );
         },
-        // Container untuk menyimpan Icon dan Text
+        // Mengatur warna latar belakang berdasarkan nama tombol.
         child: Container(
+          color: backgroundColor, // Warna latar belakang
           padding: const EdgeInsets.all(8),
           child: Center(
             child: Column(
@@ -189,14 +202,14 @@ class ItemCard extends StatelessWidget {
               children: [
                 Icon(
                   item.icon,
-                  color: Colors.black,
+                  color: Colors.white, // Mengubah warna ikon agar kontras
                   size: 30.0,
                 ),
                 const Padding(padding: EdgeInsets.all(3)),
                 Text(
                   item.name,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.black),
+                  style: const TextStyle(color: Colors.white), // Mengubah warna teks agar kontras
                 ),
               ],
             ),
