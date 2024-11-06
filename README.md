@@ -42,6 +42,6 @@ final bisa digunakan ketika nilai diketahui saat runtime.
 - Setiap tombol dibuat menggunakan widget ElevatedButton.icon, yang memungkinkan ikon dan teks berada dalam satu tombol.
 Ikon yang digunakan adalah Icons.store untuk "Lihat Produk", Icons.add untuk "Tambah Produk", dan Icons.logout untuk "Logout".
 
-- Mengatur warna backgrounf untuk setiap button dengan case switch pada Widget build di class ItemCard.
+- Mengatur warna background untuk setiap button dengan case switch pada Widget build di class ItemCard.
 
 - Menampilkan pesan dengan ScaffoldMessenger pada saat card di tap pada Widget build di class ItemCard.
