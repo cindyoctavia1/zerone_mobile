@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zerone/menu.dart';
+import 'package:zerone/screens/menu.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-       colorScheme: ColorScheme(
+      colorScheme: ColorScheme(
       primary: Colors.white,            // Warna utama diatur menjadi putih
       primaryContainer: Colors.grey[100]!, // Warna latar primer yang sedikit berbeda
       secondary: Colors.black,           // Warna sekunder diatur menjadi hitam
