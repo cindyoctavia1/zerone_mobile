@@ -129,6 +129,9 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
                         if (int.tryParse(value) == null) {
                           return "Price harus berupa angka!";
                         }
+                        if (int.parse(value) < 0) {
+                          return "Price tidak boleh di bawah 0!";
+                        }
                         return null;
                       },
                     ),
