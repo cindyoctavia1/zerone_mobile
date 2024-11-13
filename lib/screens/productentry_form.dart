@@ -164,6 +164,10 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
                                 actions: [
                                   TextButton(
                                     child: const Text('OK'),
+                                    style: TextButton.styleFrom(
+                                          foregroundColor: Colors.white, // Text color
+                                          backgroundColor: Colors.black, // Button background color
+                                        ),
                                     onPressed: () {
                                       Navigator.pop(context);
                                       _formKey.currentState!.reset();
