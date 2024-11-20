@@ -228,3 +228,48 @@ Navigasi Menu Setelah Login:
 Setelah login, cookie/token di Flutter digunakan untuk mengakses endpoint lain yang memerlukan autentikasi. Data yang diterima dari server ditampilkan di menu yang sesuai.
 
 6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+
+- Fitur Registrasi Akun
+
+Membuat endpoint registrasi di Django.
+Membuat form registrasi di Flutter dengan validasi input.
+Menggunakan package seperti http atau pbp_django_auth untuk mengirim data ke endpoint Django.
+Menampilkan pesan sukses atau error berdasarkan respons dari server.
+
+- Halaman Login
+
+Membuat halaman login di Flutter.
+Menggunakan package pbp_django_auth untuk autentikasi dengan endpoint login Django.
+Menyimpan cookie autentikasi untuk menjaga sesi pengguna.
+Menampilkan pesan error jika kredensial salah.
+
+- Integrasi Sistem Autentikasi Django dan Flutter
+
+Menggunakan pbp_django_auth untuk menangani login, logout, dan sesi pengguna.
+Mengatur middleware Django agar mendukung cookie-based authentication.
+Menggunakan metode seperti request.login dan request.logout di Flutter.
+
+- Membuat Model Kustom di Django
+
+Mendesain model sesuai kebutuhan aplikasi, misalnya dengan atribut name, price, description, dan user.
+Menjalankan migrasi untuk menerapkan model ke database.
+Membuat serializer untuk model agar data dapat diakses melalui endpoint JSON.
+
+- Halaman Daftar Item
+
+Membuat endpoint JSON di Django yang mengembalikan data semua item.
+Menggunakan FutureBuilder di Flutter untuk mengambil dan menampilkan data dari endpoint.
+Menampilkan atribut seperti name, price, dan description di halaman.
+
+-Halaman Detail Item
+
+Membuat halaman detail di Flutter yang menerima parameter dari daftar item.
+Mengambil atribut lengkap dari model item dan menampilkannya di halaman.
+Membungkus data dalam widget seperti Card untuk tampilan yang lebih rapi.
+
+-Tombol Kembali
+Menambahkan tombol di halaman detail yang memanggil Navigator.pop() untuk kembali ke halaman daftar.
+
+-Filter Item Berdasarkan Pengguna
+
+Di Django, tambahkan filter pada endpoint JSON untuk hanya mengembalikan item yang terkait dengan pengguna yang sedang login (misalnya, item.objects.filter(user=request.user)).

@@ -68,27 +68,37 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(height: 30.0),
                   TextField(
                     controller: _usernameController,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Username',
+                      labelStyle: const TextStyle(color: Colors.black),
                       hintText: 'Enter your username',
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                       ),
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                      focusedBorder: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                        borderSide: BorderSide(color: Colors.black),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 12.0, vertical: 8.0),
                     ),
                   ),
                   const SizedBox(height: 12.0),
                   TextField(
                     controller: _passwordController,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Password',
+                      labelStyle: const TextStyle(color: Colors.black),
                       hintText: 'Enter your password',
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                       ),
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+                      focusedBorder: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                        borderSide: BorderSide(color: Colors.black),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 12.0, vertical: 8.0),
                     ),
                     obscureText: true,
                   ),
@@ -98,10 +108,6 @@ class _LoginPageState extends State<LoginPage> {
                       String username = _usernameController.text;
                       String password = _passwordController.text;
 
-                      // Cek kredensial
-                      // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
-                      // Untuk menyambungkan Android emulator dengan Django pada localhost,
-                      // gunakan URL http://10.0.2.2/
                       final response = await request
                           .login("http://localhost:8000/auth/login/", {
                         'username': username,
@@ -148,9 +154,11 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.black,
-                      minimumSize: Size(double.infinity, 50),
                       backgroundColor: Theme.of(context).colorScheme.primary,
+                      side:
+                          const BorderSide(color: Colors.black), // Border hitam
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      minimumSize: const Size(double.infinity, 50),
                     ),
                     child: const Text('Login'),
                   ),
@@ -163,10 +171,10 @@ class _LoginPageState extends State<LoginPage> {
                             builder: (context) => const RegisterPage()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Don\'t have an account? Register',
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Colors.black,
                         fontSize: 16.0,
                       ),
                     ),

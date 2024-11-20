@@ -110,51 +110,55 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   const SizedBox(height: 24.0),
                   ElevatedButton(
-                    onPressed: () async {
-                      String username = _usernameController.text;
-                      String password1 = _passwordController.text;
-                      String password2 = _confirmPasswordController.text;
+                      onPressed: () async {
+                        String username = _usernameController.text;
+                        String password1 = _passwordController.text;
+                        String password2 = _confirmPasswordController.text;
 
-                      // Cek kredensial
-                      // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
-                      // Untuk menyambungkan Android emulator dengan Django pada localhost,
-                      // gunakan URL http://10.0.2.2/
-                      final response = await request.postJson(
-                          "http://localhost:8000/auth/register/",
-                          jsonEncode({
-                            "username": username,
-                            "password1": password1,
-                            "password2": password2,
-                          }));
-                      if (context.mounted) {
-                        if (response['status'] == 'success') {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Successfully registered!'),
-                            ),
-                          );
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const LoginPage()),
-                          );
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Failed to register!'),
-                            ),
-                          );
+                        // Cek kredensial
+                        // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
+                        // Untuk menyambungkan Android emulator dengan Django pada localhost,
+                        // gunakan URL http://10.0.2.2/
+                        final response = await request.postJson(
+                            "http://localhost:8000/auth/register/",
+                            jsonEncode({
+                              "username": username,
+                              "password1": password1,
+                              "password2": password2,
+                            }));
+                        if (context.mounted) {
+                          if (response['status'] == 'success') {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Successfully registered!'),
+                              ),
+                            );
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginPage()),
+                            );
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Failed to register!'),
+                              ),
+                            );
+                          }
                         }
-                      }
-                    },
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      minimumSize: Size(double.infinity, 50),
-                      backgroundColor: Theme.of(context).colorScheme.primary,
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                    ),
-                    child: const Text('Register'),
-                  ),
+                      },
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.black,
+                        backgroundColor: Theme.of(context).colorScheme.primary,
+                        side: const BorderSide(
+                            color: Colors.black), // Border hitam
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        minimumSize: const Size(double.infinity, 50),
+                      ),
+                      child: const Text(
+                        'Register',
+                        style: TextStyle(color: Colors.black),
+                      )),
                 ],
               ),
             ),

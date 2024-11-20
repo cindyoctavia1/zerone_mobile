@@ -27,14 +27,6 @@ class ProductEntry {
         fields: Fields.fromJson(json["fields"]),
       );
 
-  // String? get name => null;
-
-  // String? get imageUrl => null;
-
-  // String? get description => null;
-
-  // get price => null;
-
   Map<String, dynamic> toJson() => {
         "model": model,
         "pk": pk,
